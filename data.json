@@ -1,10 +1,25 @@
 {
   "tradfi": {
-    "spx": 7165.08,
-    "nasdaq": 24836.6,
-    "vix": 18.71,
-    "us10y": 0.43,
-    "gold": 4742.2
+    "spx": {
+      "value": 7165.08,
+      "change_30d_pct": 8.7
+    },
+    "nasdaq": {
+      "value": 24836.6,
+      "change_30d_pct": 13.25
+    },
+    "vix": {
+      "value": 18.71,
+      "change_30d_pct": -30.58
+    },
+    "us10y": {
+      "value": 4.31,
+      "change_30d_pct": -1.87
+    },
+    "gold": {
+      "value": 4742.1,
+      "change_30d_pct": 5.57
+    }
   },
-  "updated_at": "2026-04-27T04:18:40.098348+00:00"
+  "updated_at": "2026-04-27T04:22:09.200227+00:00"
 }
