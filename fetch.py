@@ -1,10 +1,12 @@
-import json
-import requests
+import json, requests
 from datetime import datetime, timezone
-url = "https://query1.finance.yahoo.com/v8/finance/chart/^GSPC?range=1mo&interval=1d"
-r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
-res = r.json()["chart"]["result"][0]
-spx = res["meta"]["regularMarketPrice"]
-data = {"tradfi": {"spx": spx}, "updated_at": datetime.now(timezone.utc).isoformat()}
+H = {"User-Agent": "Mozilla/5.0"}
+B = "https://query1.finance.yahoo.com/v8/finance/chart/"
+SYMS = [("spx", "^GSPC"), ("nasdaq", "^IXIC"), ("vix", "^VIX"), ("us10y", "^TNX"),
+("gold", "GC=F")]
+tradfi = {k: round(requests.get(B+s+"?range=1mo&interval=1d", headers=H,
+timeout=15).json()["chart"]["result"][0]["meta"]["regularMarketPrice"], 2) for k, s in   SYMS}
+if tradfi.get("us10y"): tradfi["us10y"] = round(tradfi["us10y"]/10, 2)
+data = {"tradfi": tradfi, "updated_at": datetime.now(timezone.utc).isoformat()}
 open("data.json", "w").write(json.dumps(data, indent=2))
-print("SPX:", spx)
+print(tradfi)
