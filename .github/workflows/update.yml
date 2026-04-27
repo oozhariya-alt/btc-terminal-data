@@ -1,26 +1,24 @@
-name: Update data
-  on:
-    schedule:
-      - cron: '0 * * * *'
+ name: Update data
+ "on":
     workflow_dispatch:
-  permissions:
+    schedule:
+      - cron: "0 * * * *"
+ permissions:
     contents: write
-  jobs:
+ jobs:
     update:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
         - uses: actions/setup-python@v5
           with:
-            python-version: '3.11'
-        - name: Install deps
-          run: pip install -r requirements.txt
-        - name: Fetch data
-          run: python fetch.py
+            python-version: "3.11"
+        - run: pip install -r requirements.txt
+        - run: python fetch.py
         - name: Commit data.json
           run: |
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git config user.name "gh-actions"
+            git config user.email "actions@github.com"
             git add data.json
-            git diff --quiet --cached || git commit -m "auto: update data.json"
+            git diff --quiet --cached || git commit -m "auto: update"
             git push
