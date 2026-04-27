@@ -11,8 +11,7 @@ timeout=15).json()["chart"]["result"][0] for k, s in SYMS}
 tradfi = {k: {"value": round(r["meta"]["regularMarketPrice"], 2), "change_30d_pct":
 round((r["meta"]["regularMarketPrice"] / next(c for c in
 r["indicators"]["quote"][0]["close"] if c) - 1) * 100, 2)} for k, r in raws.items()}
-try: wh =
-requests.get("https://api.blockchair.com/bitcoin/addresses?q=balance(100000000000..)",   headers=H, timeout=15).json()
+try: wh = requests.get("https://api.blockchair.com/bitcoin/addresses?q=balance(100000000000..)",   headers=H, timeout=15).json()
 except: wh = {}
 whales = {"count_1k_plus": wh.get("context", {}).get("total_rows")}
 data = {"tradfi": tradfi, "whales": whales, "updated_at":
