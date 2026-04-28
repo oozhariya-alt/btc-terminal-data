@@ -2,6 +2,10 @@
 fetch_macro.py — собирает макро-данные для BTC-терминала.
 Сейчас фокус на ETF FLOWS (Farside Investors).
 Запускается раз в сутки через GitHub Actions, пишет macro.json.
+
+Cloudflare на farside.co.uk блокирует обычный requests.get() с 403.
+Используем curl_cffi (имитация Chrome TLS-fingerprint) — обходит защиту.
+Если curl_cffi не установлен — fallback на requests с полным набором headers.
 """
 
 import json
@@ -9,15 +13,36 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
 from bs4 import BeautifulSoup
+
+# Пробуем импортировать curl_cffi (имитирует браузер на уровне TLS)
+try:
+    from curl_cffi import requests as cf_requests
+    HAS_CURL_CFFI = True
+except ImportError:
+    HAS_CURL_CFFI = False
+
+import requests as plain_requests
 
 # --- Settings ---
 FARSIDE_URL = "https://farside.co.uk/btc/"
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " \
-             "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 TIMEOUT = 30
 OUT_FILE = Path(__file__).parent / "macro.json"
+
+BROWSER_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Cache-Control": "max-age=0",
+}
 
 ETF_NAMES = {
     "IBIT": "BlackRock iShares",
@@ -62,10 +87,33 @@ def parse_date(raw):
 
 
 def fetch_html():
-    print(f"[fetch] GET {FARSIDE_URL}")
-    r = requests.get(FARSIDE_URL, headers={"User-Agent": USER_AGENT}, timeout=TIMEOUT)
-    r.raise_for_status()
-    return r.text
+    """Скачивает HTML Farside, обходя Cloudflare через curl_cffi."""
+    last_err = None
+
+    # Стратегия 1: curl_cffi с impersonate (лучший способ)
+    if HAS_CURL_CFFI:
+        for impersonate in ("chrome120", "chrome110", "chrome116", "safari17_0"):
+            try:
+                print(f"[fetch] curl_cffi impersonate={impersonate}")
+                r = cf_requests.get(FARSIDE_URL, impersonate=impersonate, timeout=TIMEOUT)
+                r.raise_for_status()
+                if r.text and "<table" in r.text.lower():
+                    return r.text
+            except Exception as e:
+                last_err = e
+                print(f"[curl_cffi {impersonate} failed] {e}")
+
+    # Стратегия 2: plain requests с полными headers
+    try:
+        print(f"[fetch] plain requests with full headers")
+        r = plain_requests.get(FARSIDE_URL, headers=BROWSER_HEADERS, timeout=TIMEOUT)
+        r.raise_for_status()
+        return r.text
+    except Exception as e:
+        last_err = e
+        print(f"[plain requests failed] {e}")
+
+    raise RuntimeError(f"Все стратегии fetch не сработали. Последняя ошибка: {last_err}")
 
 
 def parse_table(html):
@@ -76,7 +124,7 @@ def parse_table(html):
 
     rows = table.find_all("tr")
     if len(rows) < 2:
-        raise RuntimeError("В таблице меньше 2 строк — структура изменилась?")
+        raise RuntimeError("В таблице меньше 2 строк")
 
     header_cells = []
     for r in rows[:3]:
