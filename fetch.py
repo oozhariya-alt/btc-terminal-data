@@ -5,6 +5,7 @@ H = {"User-Agent": "Mozilla/5.0"}
 B = "https://query1.finance.yahoo.com/v8/finance/chart/"
 SYMS = [
     ("spx", "^GSPC"), ("nasdaq", "^IXIC"), ("vix", "^VIX"), ("us10y", "^TNX"),
+    ("dxy", "DX-Y.NYB"),
     ("gold", "GC=F"), ("silver", "SI=F"), ("oil", "CL=F"), ("copper", "HG=F"),
     ("platinum", "PL=F"), ("palladium", "PA=F"), ("natgas", "NG=F"),
     ("ibit", "IBIT"), ("fbtc", "FBTC"), ("bitb", "BITB"),
