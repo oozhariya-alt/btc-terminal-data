@@ -1,12 +1,128 @@
-import json, requests
+import json, os, requests
 from datetime import datetime, timezone
+
 H = {"User-Agent": "Mozilla/5.0"}
 B = "https://query1.finance.yahoo.com/v8/finance/chart/"
-SYMS = [("spx", "^GSPC"), ("nasdaq", "^IXIC"), ("vix", "^VIX"), ("us10y", "^TNX"), ("gold", "GC=F"), ("silver", "SI=F"), ("oil", "CL=F"), ("copper", "HG=F"), ("ibit", "IBIT"),
-("fbtc", "FBTC"), ("bitb", "BITB"), ("xlk", "XLK"), ("xlf", "XLF"), ("xle", "XLE"), ("xlu", "XLU"), ("xlv", "XLV"), ("btc_fut", "BTC=F")]
-raws = {k: requests.get(B+s+"?range=1mo&interval=1d", headers=H, timeout=15).json()["chart"]["result"][0] for k, s in SYMS}
-tradfi = {k: {"value": round(r["meta"]["regularMarketPrice"], 2), "change_30d_pct": round((r["meta"]["regularMarketPrice"] / next(c for c in r["indicators"]["quote"][0]["close"]   if c) - 1) * 100, 2)} for k, r in raws.items()}
+SYMS = [
+    ("spx", "^GSPC"), ("nasdaq", "^IXIC"), ("vix", "^VIX"), ("us10y", "^TNX"),
+    ("gold", "GC=F"), ("silver", "SI=F"), ("oil", "CL=F"), ("copper", "HG=F"),
+    ("platinum", "PL=F"), ("palladium", "PA=F"), ("natgas", "NG=F"),
+    ("ibit", "IBIT"), ("fbtc", "FBTC"), ("bitb", "BITB"),
+    ("xlk", "XLK"), ("xlf", "XLF"), ("xle", "XLE"), ("xlu", "XLU"), ("xlv", "XLV"),
+    ("btc_fut", "BTC=F"),
+]
+
+FRED = "https://api.stlouisfed.org/fred/series/observations"
+FRED_KEY = os.environ.get("FRED_API_KEY", "")
+
+
+def fetch_yahoo(symbol):
+    r = requests.get(B + symbol + "?range=1mo&interval=1d", headers=H, timeout=15)
+    r.raise_for_status()
+    res = r.json()["chart"]["result"][0]
+    cur = res["meta"]["regularMarketPrice"]
+    first = next(c for c in res["indicators"]["quote"][0]["close"] if c)
+    return {
+        "value": round(cur, 2),
+        "change_30d_pct": round((cur / first - 1) * 100, 2),
+    }
+
+
+def fetch_fred_series(series_id, days_back=400):
+    if not FRED_KEY:
+        raise RuntimeError("FRED_API_KEY not set")
+    params = {
+        "series_id": series_id,
+        "api_key": FRED_KEY,
+        "file_type": "json",
+        "sort_order": "desc",
+        "limit": days_back,
+    }
+    r = requests.get(FRED, params=params, timeout=15)
+    r.raise_for_status()
+    obs = r.json().get("observations", [])
+    pts = []
+    for o in obs:
+        try:
+            v = float(o["value"])
+        except (ValueError, KeyError):
+            continue
+        pts.append((o["date"], v))
+    return pts  # newest first
+
+
+def fred_fed_rate():
+    pts = fetch_fred_series("DFF", days_back=60)
+    if not pts:
+        return None
+    today_val = pts[0][1]
+    target = _date_30d_ago(pts[0][0])
+    val_30d = None
+    for d, v in pts:
+        if d <= target:
+            val_30d = v
+            break
+    out = {"value": round(today_val, 2)}
+    if val_30d is not None and val_30d != 0:
+        out["change_30d_pct"] = round((today_val / val_30d - 1) * 100, 2)
+    return out
+
+
+def fred_m2_yoy():
+    pts = fetch_fred_series("M2SL", days_back=400)
+    if len(pts) < 2:
+        return None
+    today_val = pts[0][1]
+    target = _date_year_ago(pts[0][0])
+    val_yr = None
+    for d, v in pts:
+        if d <= target:
+            val_yr = v
+            break
+    if val_yr is None or val_yr == 0:
+        return None
+    yoy = (today_val / val_yr - 1) * 100
+    return {"value": round(yoy, 2)}
+
+
+def _date_30d_ago(iso_date):
+    y, m, d = map(int, iso_date.split("-"))
+    from datetime import date, timedelta
+    return (date(y, m, d) - timedelta(days=30)).isoformat()
+
+
+def _date_year_ago(iso_date):
+    y, m, d = map(int, iso_date.split("-"))
+    return f"{y - 1:04d}-{m:02d}-{d:02d}"
+
+
+tradfi = {}
+for k, s in SYMS:
+    try:
+        tradfi[k] = fetch_yahoo(s)
+    except Exception as e:
+        print(f"[yahoo fail] {k} ({s}): {e}")
+
+try:
+    fr = fred_fed_rate()
+    if fr:
+        tradfi["fed_rate"] = fr
+except Exception as e:
+    print(f"[fred fed_rate fail] {e}")
+
+try:
+    m2 = fred_m2_yoy()
+    if m2:
+        tradfi["m2_yoy"] = m2
+except Exception as e:
+    print(f"[fred m2_yoy fail] {e}")
+
 whales = {"count_1k_plus": None}
-data = {"tradfi": tradfi, "whales": whales, "updated_at": datetime.now(timezone.utc).isoformat()}
+data = {
+    "tradfi": tradfi,
+    "whales": whales,
+    "updated_at": datetime.now(timezone.utc).isoformat(),
+}
 open("data.json", "w").write(json.dumps(data, indent=2))
-print(tradfi, whales)
+print(f"[ok] wrote {len(tradfi)} indicators")
+print(tradfi)
