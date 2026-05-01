@@ -488,7 +488,7 @@
         },
         {
           "date": "2026-04-30",
-          "close": 24892.3125
+          "close": 24892.3105
         }
       ]
     },
@@ -985,9 +985,13 @@
       ]
     },
     "dxy": {
-      "value": 98.14,
-      "change_30d_pct": 1.18,
+      "value": 98.15,
+      "change_30d_pct": 0.56,
       "series60d": [
+        {
+          "date": "2026-02-04",
+          "close": 97.62
+        },
         {
           "date": "2026-02-05",
           "close": 97.82
@@ -1223,17 +1227,17 @@
         {
           "date": "2026-04-30",
           "close": 98.08
-        },
-        {
-          "date": "2026-05-01",
-          "close": 98.135
         }
       ]
     },
     "gold": {
-      "value": 4631.5,
-      "change_30d_pct": -1.75,
+      "value": 4637.7,
+      "change_30d_pct": 0.33,
       "series60d": [
+        {
+          "date": "2026-02-04",
+          "close": 4920.3999
+        },
         {
           "date": "2026-02-05",
           "close": 4861.3999
@@ -1469,21 +1473,21 @@
         {
           "date": "2026-04-30",
           "close": 4614.7002
-        },
-        {
-          "date": "2026-05-01",
-          "close": 4631.5
         }
       ]
     },
     "silver": {
-      "value": 74.62,
-      "change_30d_pct": 6.12
+      "value": 74.81,
+      "change_30d_pct": -1.39
     },
     "oil": {
-      "value": 105.47,
-      "change_30d_pct": 61.74,
+      "value": 105.51,
+      "change_30d_pct": 69.79,
       "series60d": [
+        {
+          "date": "2026-02-04",
+          "close": 65.14
+        },
         {
           "date": "2026-02-05",
           "close": 63.29
@@ -1719,28 +1723,24 @@
         {
           "date": "2026-04-30",
           "close": 105.07
-        },
-        {
-          "date": "2026-05-01",
-          "close": 105.47
         }
       ]
     },
     "copper": {
-      "value": 6.02,
-      "change_30d_pct": 9.93
+      "value": 6.01,
+      "change_30d_pct": 6.94
     },
     "platinum": {
-      "value": 1991.3,
-      "change_30d_pct": 5.61
+      "value": 1992.4,
+      "change_30d_pct": 1.17
     },
     "palladium": {
-      "value": 1541.5,
-      "change_30d_pct": 8.71
+      "value": 1540.0,
+      "change_30d_pct": 4.17
     },
     "natgas": {
-      "value": 2.77,
-      "change_30d_pct": -4.05
+      "value": 2.78,
+      "change_30d_pct": -1.28
     },
     "ibit": {
       "value": 43.32,
@@ -1775,8 +1775,8 @@
       "change_30d_pct": -1.18
     },
     "btc_fut": {
-      "value": 76995.0,
-      "change_30d_pct": 15.48
+      "value": 77465.0,
+      "change_30d_pct": 13.35
     },
     "fed_rate": {
       "value": 3.64,
@@ -1789,5 +1789,5 @@
   "whales": {
     "count_1k_plus": null
   },
-  "updated_at": "2026-05-01T03:20:30.671738+00:00"
+  "updated_at": "2026-05-01T04:08:03.776953+00:00"
 }
