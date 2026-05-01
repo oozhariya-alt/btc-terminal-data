@@ -13,20 +13,40 @@ SYMS = [
     ("btc_fut", "BTC=F"),
 ]
 
+# Phase 4 (2026-05-01): индикаторы, для которых пишем series60d (для frontend-корреляций)
+SERIES_KEYS = {"spx", "nasdaq", "vix", "us10y", "dxy", "gold", "oil"}
+
 FRED = "https://api.stlouisfed.org/fred/series/observations"
 FRED_KEY = os.environ.get("FRED_API_KEY", "")
 
 
-def fetch_yahoo(symbol):
-    r = requests.get(B + symbol + "?range=1mo&interval=1d", headers=H, timeout=15)
+def fetch_yahoo(symbol, with_series=False):
+    # 3mo даёт ~64 торговых дня, что покрывает 60-дневный Pearson + запас на weekend gaps
+    yrange = "3mo" if with_series else "1mo"
+    r = requests.get(B + symbol + f"?range={yrange}&interval=1d", headers=H, timeout=15)
     r.raise_for_status()
     res = r.json()["chart"]["result"][0]
     cur = res["meta"]["regularMarketPrice"]
-    first = next(c for c in res["indicators"]["quote"][0]["close"] if c)
-    return {
+    closes = res["indicators"]["quote"][0]["close"]
+    first = next(c for c in closes if c)
+
+    out = {
         "value": round(cur, 2),
         "change_30d_pct": round((cur / first - 1) * 100, 2),
     }
+
+    if with_series:
+        ts = res.get("timestamp", [])
+        series = []
+        for t, c in zip(ts, closes):
+            if c is None:
+                continue
+            d = datetime.fromtimestamp(t, tz=timezone.utc).date().isoformat()
+            series.append({"date": d, "close": round(c, 4)})
+        # Берём последние 60 торговых точек (если меньше — все доступные)
+        out["series60d"] = series[-60:]
+
+    return out
 
 
 def fetch_fred_series(series_id, days_back=400):
@@ -100,7 +120,7 @@ def _date_year_ago(iso_date):
 tradfi = {}
 for k, s in SYMS:
     try:
-        tradfi[k] = fetch_yahoo(s)
+        tradfi[k] = fetch_yahoo(s, with_series=(k in SERIES_KEYS))
     except Exception as e:
         print(f"[yahoo fail] {k} ({s}): {e}")
 
@@ -126,4 +146,5 @@ data = {
 }
 open("data.json", "w").write(json.dumps(data, indent=2))
 print(f"[ok] wrote {len(tradfi)} indicators")
-print(tradfi)
+n_series = sum(1 for v in tradfi.values() if isinstance(v, dict) and "series60d" in v)
+print(f"[ok] series60d for {n_series} indicators")
