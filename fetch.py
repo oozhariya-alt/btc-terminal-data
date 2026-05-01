@@ -19,6 +19,10 @@ SERIES_KEYS = {"spx", "nasdaq", "vix", "us10y", "dxy", "gold", "oil"}
 FRED = "https://api.stlouisfed.org/fred/series/observations"
 FRED_KEY = os.environ.get("FRED_API_KEY", "")
 
+# Phase 4 (2026-05-01): CoinGecko Demo API + on-chain MVRV/NUPL
+CG_KEY = os.environ.get("CG_API_KEY", "")
+CG_BASE = "https://api.coingecko.com/api/v3"
+
 
 def fetch_yahoo(symbol, with_series=False):
     # 3mo даёт ~64 торговых дня, что покрывает 60-дневный Pearson + запас на weekend gaps
@@ -117,6 +121,122 @@ def _date_year_ago(iso_date):
     return f"{y - 1:04d}-{m:02d}-{d:02d}"
 
 
+# ── COINGECKO (Phase 4) ────────────────────────────────────────────
+def cg_get(path, params=None):
+    headers = dict(H)
+    if CG_KEY:
+        headers["x-cg-demo-api-key"] = CG_KEY
+    r = requests.get(CG_BASE + path, params=params or {}, headers=headers, timeout=25)
+    r.raise_for_status()
+    return r.json()
+
+
+def _safe_float(x):
+    try:
+        v = float(x)
+        return v if v == v else None  # NaN check
+    except (TypeError, ValueError):
+        return None
+
+
+def fetch_cg_coin(coin_id):
+    d = cg_get(f"/coins/{coin_id}", {
+        "localization": "false",
+        "tickers": "false",
+        "market_data": "true",
+        "community_data": "false",
+        "developer_data": "false",
+    })
+    md = d.get("market_data", {}) or {}
+    return {
+        "price": _safe_float((md.get("current_price") or {}).get("usd")),
+        "ath": _safe_float((md.get("ath") or {}).get("usd")),
+        "ath_date": (md.get("ath_date") or {}).get("usd"),
+        "ath_change_pct": _safe_float((md.get("ath_change_percentage") or {}).get("usd")),
+        "atl": _safe_float((md.get("atl") or {}).get("usd")),
+        "mcap": _safe_float((md.get("market_cap") or {}).get("usd")),
+        "supply": _safe_float(md.get("circulating_supply")),
+        "total_supply": _safe_float(md.get("total_supply")),
+        "max_supply": _safe_float(md.get("max_supply")),
+        "fdv": _safe_float((md.get("fully_diluted_valuation") or {}).get("usd")),
+        "vol_24h": _safe_float((md.get("total_volume") or {}).get("usd")),
+        "change_24h_pct": _safe_float(md.get("price_change_percentage_24h")),
+        "change_7d_pct": _safe_float(md.get("price_change_percentage_7d")),
+        "change_30d_pct": _safe_float(md.get("price_change_percentage_30d")),
+        "change_1y_pct": _safe_float(md.get("price_change_percentage_1y")),
+    }
+
+
+def fetch_cg_global():
+    d = (cg_get("/global") or {}).get("data", {}) or {}
+    return {
+        "total_mcap": _safe_float((d.get("total_market_cap") or {}).get("usd")),
+        "total_volume": _safe_float((d.get("total_volume") or {}).get("usd")),
+        "btc_dominance": _safe_float((d.get("market_cap_percentage") or {}).get("btc")),
+        "eth_dominance": _safe_float((d.get("market_cap_percentage") or {}).get("eth")),
+        "active_cryptos": d.get("active_cryptocurrencies"),
+        "mcap_change_24h_pct": _safe_float(d.get("market_cap_change_percentage_24h_usd")),
+    }
+
+
+def fetch_cg_treasury():
+    d = cg_get("/companies/public_treasury/bitcoin") or {}
+    return {
+        "total_holdings_btc": _safe_float(d.get("total_holdings")),
+        "total_value_usd": _safe_float(d.get("total_value_usd")),
+        "market_cap_dominance": _safe_float(d.get("market_cap_dominance")),
+        "companies_count": len(d.get("companies", []) or []),
+    }
+
+
+def fetch_cg_categories(top_n=30):
+    d = cg_get("/coins/categories") or []
+    if not isinstance(d, list):
+        return None
+    out = []
+    for c in d[:top_n]:
+        out.append({
+            "id": c.get("id"),
+            "name": c.get("name"),
+            "mcap": _safe_float(c.get("market_cap")),
+            "change_24h_pct": _safe_float(c.get("market_cap_change_24h")),
+            "volume_24h": _safe_float(c.get("volume_24h")),
+        })
+    return out
+
+
+def fetch_cg_btc_30d():
+    d = cg_get("/coins/bitcoin/market_chart", {
+        "vs_currency": "usd", "days": 30, "interval": "daily",
+    }) or {}
+    prices = d.get("prices", []) or []
+    return [{"ts": int(p[0] / 1000), "price": round(p[1], 2)} for p in prices if p and len(p) == 2]
+
+
+# ── ON-CHAIN MVRV/NUPL/Realized Price (Phase 4) ────────────────────
+# bitcoin-data.com — open community API, no key required.
+ONCHAIN_BASE = "https://bitcoin-data.com/api/v1"
+
+
+def _onchain_get(path):
+    r = requests.get(ONCHAIN_BASE + path, headers=H, timeout=20)
+    r.raise_for_status()
+    return r.json()
+
+
+def fetch_onchain_metric(path, value_key):
+    """Универсальный ридер: /<metric>/last → {<value_key>:..., d:'YYYY-MM-DD'}"""
+    try:
+        d = _onchain_get(path)
+        val = _safe_float(d.get(value_key))
+        date = d.get("d") or d.get("date")
+        return {"value": val, "date": date}
+    except Exception as e:
+        print(f"[onchain {path} fail] {e}")
+        return None
+
+
+# ── EXECUTE ────────────────────────────────────────────────────────
 tradfi = {}
 for k, s in SYMS:
     try:
@@ -138,13 +258,51 @@ try:
 except Exception as e:
     print(f"[fred m2_yoy fail] {e}")
 
+# CoinGecko
+cg = {}
+for name, fn in [
+    ("btc", lambda: fetch_cg_coin("bitcoin")),
+    ("eth", lambda: fetch_cg_coin("ethereum")),
+    ("global", fetch_cg_global),
+    ("treasury", fetch_cg_treasury),
+    ("categories", fetch_cg_categories),
+    ("btc_30d", fetch_cg_btc_30d),
+]:
+    try:
+        cg[name] = fn()
+    except Exception as e:
+        print(f"[cg {name} fail] {e}")
+
+# On-chain
+onchain = {}
+for key, path, val_key in [
+    ("mvrv", "/mvrv/last", "mvrv"),
+    ("mvrv_zscore", "/mvrv-zscore/last", "mvrvZscore"),
+    ("nupl", "/nupl/last", "nupl"),
+    ("realized_price", "/realized-price/last", "realizedPrice"),
+    ("realized_cap", "/realized-cap/last", "realizedCap"),
+    ("puell", "/puell-multiple/last", "puellMultiple"),
+    ("active_addresses", "/addresses-active-count/last", "activeAddresses"),
+    ("sopr", "/sopr/last", "sopr"),
+]:
+    rec = fetch_onchain_metric(path, val_key)
+    if rec and rec.get("value") is not None:
+        onchain[key] = rec["value"]
+        # Сохраняем дату последней метрики (одну общую — у всех источников совпадает)
+        if rec.get("date"):
+            onchain.setdefault("date", rec["date"])
+
 whales = {"count_1k_plus": None}
 data = {
     "tradfi": tradfi,
     "whales": whales,
+    "cg": cg,
+    "onchain": onchain,
     "updated_at": datetime.now(timezone.utc).isoformat(),
 }
 open("data.json", "w").write(json.dumps(data, indent=2))
-print(f"[ok] wrote {len(tradfi)} indicators")
+print(f"[ok] wrote {len(tradfi)} tradfi indicators")
 n_series = sum(1 for v in tradfi.values() if isinstance(v, dict) and "series60d" in v)
 print(f"[ok] series60d for {n_series} indicators")
+print(f"[ok] cg sections: {sorted(cg.keys())}")
+print(f"[ok] onchain keys: {sorted(onchain.keys())}")
