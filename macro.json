@@ -1,25 +1,24 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-05-06T00:12:33Z",
+  "updatedAt": "2026-05-07T00:11:44Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": 88.5,
-      "sum7d": 756.1,
-      "sum30d": 2176.4,
-      "sumYtd": 2176.4
+      "today": -49.4,
+      "sum7d": 1348.7,
+      "sum30d": 1858.5,
+      "sumYtd": 1858.5
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
         "today": 0.0,
-        "sum7d": 472.1,
-        "sum30d": 1488.7,
-        "sumYtd": 1488.7,
+        "sum7d": 723.5,
+        "sum30d": 1456.1,
+        "sumYtd": 1456.1,
         "history30d": [
-          284.0,
           256.0,
           39.3,
           246.9,
@@ -31,6 +30,7 @@
           19.1,
           284.4,
           335.5,
+          251.4,
           0.0
         ]
       },
@@ -38,11 +38,10 @@
         "ticker": "FBTC",
         "name": "Fidelity Wise Origin",
         "today": 0.0,
-        "sum7d": 233.1,
-        "sum30d": 421.4,
-        "sumYtd": 421.4,
+        "sum7d": 516.7,
+        "sum30d": 391.2,
+        "sumYtd": 391.2,
         "history30d": [
-          163.4,
           -6.6,
           -6.6,
           56.7,
@@ -54,18 +53,18 @@
           26.6,
           213.4,
           184.6,
+          133.2,
           0.0
         ]
       },
       {
         "ticker": "BITB",
         "name": "Bitwise Bitcoin",
-        "today": 14.6,
-        "sum7d": 16.5,
-        "sum30d": 40.9,
-        "sumYtd": 40.9,
+        "today": -25.2,
+        "sum7d": 0.1,
+        "sum30d": -22.5,
+        "sumYtd": -22.5,
         "history30d": [
-          38.2,
           0.0,
           -12.7,
           15.4,
@@ -77,18 +76,18 @@
           -2.9,
           27.3,
           0.0,
-          14.6
+          14.6,
+          -25.2
         ]
       },
       {
         "ticker": "ARKB",
         "name": "ARK 21Shares",
-        "today": 92.3,
-        "sum7d": 142.4,
-        "sum30d": 319.9,
-        "sumYtd": 319.9,
+        "today": 0.0,
+        "sum7d": 185.7,
+        "sum30d": 202.0,
+        "sumYtd": 202.0,
         "history30d": [
-          117.9,
           0.0,
           -14.5,
           11.9,
@@ -100,7 +99,8 @@
           -6.3,
           88.5,
           0.0,
-          92.3
+          92.3,
+          0.0
         ]
       },
       {
@@ -108,10 +108,9 @@
         "name": "Invesco Galaxy",
         "today": 0.0,
         "sum7d": -4.9,
-        "sum30d": -1.0,
-        "sumYtd": -1.0,
+        "sum30d": -4.9,
+        "sumYtd": -4.9,
         "history30d": [
-          3.9,
           0.0,
           0.0,
           0.0,
@@ -123,18 +122,18 @@
           -4.9,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
       {
         "ticker": "EZBC",
         "name": "Franklin",
-        "today": 0.0,
-        "sum7d": -6.5,
-        "sum30d": -6.5,
-        "sumYtd": -6.5,
+        "today": -7.1,
+        "sum7d": -13.6,
+        "sum30d": -13.6,
+        "sumYtd": -13.6,
         "history30d": [
-          0.0,
           0.0,
           0.0,
           0.0,
@@ -146,7 +145,8 @@
           0.0,
           0.0,
           0.0,
-          0.0
+          0.0,
+          -7.1
         ]
       },
       {
@@ -157,8 +157,8 @@
         "sum30d": 5.8,
         "sumYtd": 5.8,
         "history30d": [
-          0.0,
           5.8,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -176,11 +176,10 @@
         "ticker": "HODL",
         "name": "VanEck",
         "today": 0.0,
-        "sum7d": -10.8,
-        "sum30d": -10.1,
-        "sumYtd": -10.1,
+        "sum7d": -2.5,
+        "sum30d": -22.5,
+        "sumYtd": -22.5,
         "history30d": [
-          6.6,
           0.0,
           -4.3,
           3.9,
@@ -192,6 +191,7 @@
           -2.2,
           5.5,
           0.0,
+          -5.8,
           0.0
         ]
       },
@@ -205,8 +205,8 @@
         "history30d": [
           0.0,
           0.0,
-          0.0,
           6.3,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -221,12 +221,11 @@
       {
         "ticker": "GBTC",
         "name": "Grayscale Trust",
-        "today": -18.4,
-        "sum7d": -92.0,
-        "sum30d": -146.8,
-        "sumYtd": -146.8,
+        "today": -17.1,
+        "sum7d": -62.5,
+        "sum30d": -168.1,
+        "sumYtd": -168.1,
         "history30d": [
-          4.2,
           -24.9,
           -17.5,
           -16.6,
@@ -238,7 +237,8 @@
           -5.9,
           0.0,
           0.0,
-          -18.4
+          -18.4,
+          -17.1
         ]
       },
       {
@@ -246,10 +246,9 @@
         "name": "Grayscale Mini Trust",
         "today": 0.0,
         "sum7d": 6.2,
-        "sum30d": 57.8,
-        "sumYtd": 57.8,
+        "sum30d": 28.7,
+        "sumYtd": 28.7,
         "history30d": [
-          29.1,
           0.0,
           17.3,
           0.0,
@@ -261,34 +260,21 @@
           0.0,
           6.2,
           0.0,
+          0.0,
           0.0
         ]
       }
     ],
     "signal": {
-      "consecutivePositiveDays": 4,
-      "consecutiveNegativeDays": 0,
-      "interpretation": "STRONG_INFLOW",
-      "score": 0.3,
-      "todayTotal": 88.5,
-      "weekTotal": 756.1
+      "consecutivePositiveDays": 0,
+      "consecutiveNegativeDays": 1,
+      "interpretation": "MILD_INFLOW",
+      "score": 0.1,
+      "todayTotal": -49.4,
+      "weekTotal": 1348.7
     },
-    "lastDate": "2026-05-05",
+    "lastDate": "2026-05-06",
     "history": [
-      {
-        "date": "2026-04-17",
-        "IBIT": 284.0,
-        "FBTC": 163.4,
-        "BITB": 38.2,
-        "ARKB": 117.9,
-        "BTCO": 3.9,
-        "EZBC": 0.0,
-        "BRRR": 0.0,
-        "HODL": 6.6,
-        "BTCW": 0.0,
-        "GBTC": 4.2,
-        "BTC": 29.1
-      },
       {
         "date": "2026-04-20",
         "IBIT": 256.0,
@@ -445,16 +431,30 @@
       },
       {
         "date": "2026-05-05",
-        "IBIT": 0.0,
-        "FBTC": 0.0,
+        "IBIT": 251.4,
+        "FBTC": 133.2,
         "BITB": 14.6,
         "ARKB": 92.3,
         "BTCO": 0.0,
         "EZBC": 0.0,
         "BRRR": 0.0,
-        "HODL": 0.0,
+        "HODL": -5.8,
         "BTCW": 0.0,
         "GBTC": -18.4,
+        "BTC": 0.0
+      },
+      {
+        "date": "2026-05-06",
+        "IBIT": 0.0,
+        "FBTC": 0.0,
+        "BITB": -25.2,
+        "ARKB": 0.0,
+        "BTCO": 0.0,
+        "EZBC": -7.1,
+        "BRRR": 0.0,
+        "HODL": 0.0,
+        "BTCW": 0.0,
+        "GBTC": -17.1,
         "BTC": 0.0
       }
     ]
