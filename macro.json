@@ -1,23 +1,23 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-05-22T01:29:18Z",
+  "updatedAt": "2026-05-23T01:22:39Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": 2.8,
-      "sum7d": -1844.8,
-      "sum30d": -1476.7,
-      "sumYtd": -1476.7
+      "today": -36.3,
+      "sum7d": -1354.4,
+      "sum30d": -1616.7,
+      "sumYtd": -1616.7
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
         "today": 0.0,
-        "sum7d": -1112.3,
-        "sum30d": -556.3,
-        "sumYtd": -556.3,
+        "sum7d": -931.3,
+        "sum30d": -660.0,
+        "sumYtd": -660.0,
         "history30d": [
           335.5,
           251.4,
@@ -32,16 +32,17 @@
           -448.4,
           -325.6,
           -61.5,
+          -103.7,
           0.0
         ]
       },
       {
         "ticker": "FBTC",
         "name": "Fidelity Wise Origin",
-        "today": 0.0,
-        "sum7d": -244.5,
-        "sum30d": -282.0,
-        "sumYtd": -282.0,
+        "today": -36.3,
+        "sum7d": -147.6,
+        "sum30d": -318.3,
+        "sumYtd": -318.3,
         "history30d": [
           184.6,
           133.2,
@@ -56,14 +57,15 @@
           -63.4,
           -1.7,
           -10.1,
-          0.0
+          0.0,
+          -36.3
         ]
       },
       {
         "ticker": "BITB",
         "name": "Bitwise Bitcoin",
         "today": 0.0,
-        "sum7d": -38.5,
+        "sum7d": -3.1,
         "sum30d": -66.6,
         "sumYtd": -66.6,
         "history30d": [
@@ -80,14 +82,15 @@
           -9.2,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
       {
         "ticker": "ARKB",
         "name": "ARK 21Shares",
-        "today": 2.8,
-        "sum7d": -345.9,
+        "today": 0.0,
+        "sum7d": -168.8,
         "sum30d": -377.9,
         "sumYtd": -377.9,
         "history30d": [
@@ -104,7 +107,8 @@
           -109.6,
           0.0,
           0.0,
-          2.8
+          2.8,
+          0.0
         ]
       },
       {
@@ -126,6 +130,7 @@
           -5.7,
           0.0,
           -3.8,
+          0.0,
           0.0,
           0.0,
           0.0
@@ -152,6 +157,7 @@
           -6.6,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -175,6 +181,7 @@
           0.0,
           0.0,
           -3.8,
+          0.0,
           0.0,
           0.0
         ]
@@ -200,6 +207,7 @@
           -7.6,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -211,6 +219,7 @@
         "sum30d": 0.0,
         "sumYtd": 0.0,
         "history30d": [
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -248,6 +257,7 @@
           0.0,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -272,19 +282,20 @@
           0.0,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       }
     ],
     "signal": {
-      "consecutivePositiveDays": 1,
-      "consecutiveNegativeDays": 0,
-      "interpretation": "MILD_OUTFLOW",
-      "score": -0.1,
-      "todayTotal": 2.8,
-      "weekTotal": -1844.8
+      "consecutivePositiveDays": 0,
+      "consecutiveNegativeDays": 6,
+      "interpretation": "INSTITUTIONAL_BEAR",
+      "score": -0.5,
+      "todayTotal": -36.3,
+      "weekTotal": -1354.4
     },
-    "lastDate": "2026-05-21",
+    "lastDate": "2026-05-22",
     "history": [
       {
         "date": "2026-05-04",
@@ -470,10 +481,24 @@
       },
       {
         "date": "2026-05-21",
-        "IBIT": 0.0,
+        "IBIT": -103.7,
         "FBTC": 0.0,
         "BITB": 0.0,
         "ARKB": 2.8,
+        "BTCO": 0.0,
+        "EZBC": 0.0,
+        "BRRR": 0.0,
+        "HODL": 0.0,
+        "BTCW": 0.0,
+        "GBTC": 0.0,
+        "BTC": 0.0
+      },
+      {
+        "date": "2026-05-22",
+        "IBIT": 0.0,
+        "FBTC": -36.3,
+        "BITB": 0.0,
+        "ARKB": 0.0,
         "BTCO": 0.0,
         "EZBC": 0.0,
         "BRRR": 0.0,
