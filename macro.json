@@ -1,25 +1,24 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-05-30T01:28:04Z",
+  "updatedAt": "2026-05-31T01:35:00Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": -51.8,
-      "sum7d": -1624.1,
-      "sum30d": -3638.4,
-      "sumYtd": -3638.4
+      "today": -120.0,
+      "sum7d": -1692.3,
+      "sum30d": -3707.5,
+      "sumYtd": -3707.5
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
-        "today": 0.0,
-        "sum7d": -1132.2,
-        "sum30d": -2223.3,
-        "sumYtd": -2223.3,
+        "today": -68.2,
+        "sum7d": -1200.4,
+        "sum30d": -2284.1,
+        "sumYtd": -2284.1,
         "history30d": [
-          -7.4,
           -32.9,
           -284.7,
           144.1,
@@ -32,7 +31,7 @@
           -192.4,
           -527.8,
           -177.9,
-          0.0
+          -68.2
         ]
       },
       {
@@ -40,10 +39,9 @@
         "name": "Fidelity Wise Origin",
         "today": -31.9,
         "sum7d": -215.5,
-        "sum30d": -539.6,
-        "sumYtd": -539.6,
+        "sum30d": -536.0,
+        "sumYtd": -536.0,
         "history30d": [
-          -3.6,
           -86.1,
           -133.2,
           3.5,
@@ -67,7 +65,6 @@
         "sum30d": -102.3,
         "sumYtd": -102.3,
         "history30d": [
-          0.0,
           -17.5,
           -35.4,
           17.7,
@@ -91,7 +88,6 @@
         "sum30d": -455.7,
         "sumYtd": -455.7,
         "history30d": [
-          0.0,
           -85.1,
           -177.1,
           -9.5,
@@ -112,10 +108,9 @@
         "name": "Invesco Galaxy",
         "today": 0.0,
         "sum7d": 0.0,
-        "sum30d": -2.2,
-        "sumYtd": -2.2,
+        "sum30d": -9.5,
+        "sumYtd": -9.5,
         "history30d": [
-          7.3,
           0.0,
           0.0,
           -5.7,
@@ -139,7 +134,6 @@
         "sum30d": -27.6,
         "sumYtd": -27.6,
         "history30d": [
-          0.0,
           0.0,
           0.0,
           -14.1,
@@ -168,7 +162,6 @@
           0.0,
           0.0,
           0.0,
-          0.0,
           -3.8,
           0.0,
           0.0,
@@ -184,10 +177,9 @@
         "name": "VanEck",
         "today": 0.0,
         "sum7d": 0.0,
-        "sum30d": 4.5,
-        "sumYtd": 4.5,
+        "sum30d": -0.1,
+        "sumYtd": -0.1,
         "history30d": [
-          4.6,
           0.0,
           0.0,
           7.5,
@@ -223,7 +215,6 @@
           0.0,
           0.0,
           0.0,
-          0.0,
           0.0
         ]
       },
@@ -235,7 +226,6 @@
         "sum30d": -268.0,
         "sumYtd": -268.0,
         "history30d": [
-          0.0,
           -17.6,
           0.0,
           -31.6,
@@ -261,7 +251,6 @@
         "history30d": [
           0.0,
           0.0,
-          0.0,
           12.6,
           0.0,
           0.0,
@@ -281,25 +270,11 @@
       "consecutiveNegativeDays": 10,
       "interpretation": "INSTITUTIONAL_BEAR",
       "score": -0.5,
-      "todayTotal": -51.8,
-      "weekTotal": -1624.1
+      "todayTotal": -120.0,
+      "weekTotal": -1692.3
     },
     "lastDate": "2026-05-29",
     "history": [
-      {
-        "date": "2026-05-11",
-        "IBIT": -7.4,
-        "FBTC": -3.6,
-        "BITB": 0.0,
-        "ARKB": 0.0,
-        "BTCO": 7.3,
-        "EZBC": 0.0,
-        "BRRR": 0.0,
-        "HODL": 4.6,
-        "BTCW": 0.0,
-        "GBTC": 0.0,
-        "BTC": 0.0
-      },
       {
         "date": "2026-05-12",
         "IBIT": -32.9,
@@ -470,7 +445,7 @@
       },
       {
         "date": "2026-05-29",
-        "IBIT": 0.0,
+        "IBIT": -68.2,
         "FBTC": -31.9,
         "BITB": 0.0,
         "ARKB": -7.3,
