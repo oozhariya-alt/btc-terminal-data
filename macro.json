@@ -1,23 +1,23 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-06-19T02:16:10Z",
+  "updatedAt": "2026-06-20T01:35:22Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": -4.4,
-      "sum7d": -309.3,
-      "sum30d": -2240.1,
-      "sumYtd": -2240.1
+      "today": -101.1,
+      "sum7d": -406.0,
+      "sum30d": -2336.8,
+      "sumYtd": -2336.8
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
-        "today": 0.0,
-        "sum7d": -8.5,
-        "sum30d": -1640.2,
-        "sumYtd": -1640.2,
+        "today": -96.7,
+        "sum7d": -105.2,
+        "sum30d": -1736.9,
+        "sumYtd": -1736.9,
         "history30d": [
           -440.3,
           -388.6,
@@ -32,7 +32,7 @@
           66.4,
           16.4,
           -30.8,
-          0.0
+          -96.7
         ]
       },
       {
@@ -281,8 +281,8 @@
       "consecutiveNegativeDays": 2,
       "interpretation": "MILD_OUTFLOW",
       "score": -0.1,
-      "todayTotal": -4.4,
-      "weekTotal": -309.3
+      "todayTotal": -101.1,
+      "weekTotal": -406.0
     },
     "lastDate": "2026-06-18",
     "history": [
@@ -470,7 +470,7 @@
       },
       {
         "date": "2026-06-18",
-        "IBIT": 0.0,
+        "IBIT": -96.7,
         "FBTC": 0.0,
         "BITB": 0.0,
         "ARKB": 0.0,
