@@ -1,25 +1,24 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-06-22T02:01:49Z",
+  "updatedAt": "2026-06-23T01:30:13Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": -101.1,
-      "sum7d": -406.0,
-      "sum30d": -1313.0,
-      "sumYtd": -1313.0
+      "today": 92.2,
+      "sum7d": -99.9,
+      "sum30d": -824.2,
+      "sumYtd": -824.2
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
-        "today": -96.7,
-        "sum7d": -105.2,
-        "sum30d": -908.0,
-        "sumYtd": -908.0,
+        "today": 0.0,
+        "sum7d": 43.3,
+        "sum30d": -565.7,
+        "sumYtd": -565.7,
         "history30d": [
-          -342.3,
           47.7,
           -213.7,
           -232.9,
@@ -30,18 +29,18 @@
           66.4,
           16.4,
           -30.8,
-          -96.7
+          -96.7,
+          0.0
         ]
       },
       {
         "ticker": "FBTC",
         "name": "Fidelity Wise Origin",
-        "today": 0.0,
-        "sum7d": 26.1,
-        "sum30d": -54.2,
-        "sumYtd": -54.2,
+        "today": 57.4,
+        "sum7d": 79.5,
+        "sum30d": 57.5,
+        "sumYtd": 57.5,
         "history30d": [
-          -54.3,
           -5.5,
           -59.7,
           59.4,
@@ -52,7 +51,8 @@
           -8.7,
           4.3,
           14.0,
-          0.0
+          0.0,
+          57.4
         ]
       },
       {
@@ -63,7 +63,6 @@
         "sum30d": -9.4,
         "sumYtd": -9.4,
         "history30d": [
-          0.0,
           -15.6,
           0.0,
           14.1,
@@ -74,18 +73,18 @@
           0.0,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
       {
         "ticker": "ARKB",
         "name": "ARK 21Shares",
-        "today": 0.0,
-        "sum7d": -74.1,
-        "sum30d": -31.7,
-        "sumYtd": -31.7,
+        "today": 64.0,
+        "sum7d": -10.1,
+        "sum30d": 32.3,
+        "sumYtd": 32.3,
         "history30d": [
-          0.0,
           -20.7,
           0.0,
           63.1,
@@ -96,7 +95,8 @@
           -6.6,
           0.0,
           -43.5,
-          0.0
+          0.0,
+          64.0
         ]
       },
       {
@@ -107,7 +107,6 @@
         "sum30d": -19.0,
         "sumYtd": -19.0,
         "history30d": [
-          0.0,
           -12.6,
           0.0,
           0.0,
@@ -118,18 +117,18 @@
           0.0,
           0.0,
           -6.4,
+          0.0,
           0.0
         ]
       },
       {
         "ticker": "EZBC",
         "name": "Franklin",
-        "today": 0.0,
-        "sum7d": -5.8,
-        "sum30d": -5.8,
-        "sumYtd": -5.8,
+        "today": 3.7,
+        "sum7d": -2.1,
+        "sum30d": -2.1,
+        "sumYtd": -2.1,
         "history30d": [
-          0.0,
           0.0,
           0.0,
           0.0,
@@ -140,7 +139,8 @@
           -5.8,
           0.0,
           0.0,
-          0.0
+          0.0,
+          3.7
         ]
       },
       {
@@ -168,12 +168,11 @@
       {
         "ticker": "HODL",
         "name": "VanEck",
-        "today": -4.4,
+        "today": 0.0,
         "sum7d": -27.6,
         "sum30d": -23.4,
         "sumYtd": -23.4,
         "history30d": [
-          0.0,
           0.0,
           4.2,
           0.0,
@@ -184,14 +183,15 @@
           -6.1,
           0.0,
           -4.1,
-          -4.4
+          -4.4,
+          0.0
         ]
       },
       {
         "ticker": "BTCW",
         "name": "WisdomTree",
         "today": 0.0,
-        "sum7d": 1.0,
+        "sum7d": 0.0,
         "sum30d": 1.0,
         "sumYtd": 1.0,
         "history30d": [
@@ -199,8 +199,8 @@
           0.0,
           0.0,
           0.0,
-          0.0,
           1.0,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -212,12 +212,11 @@
       {
         "ticker": "GBTC",
         "name": "Grayscale Trust",
-        "today": 0.0,
-        "sum7d": -244.2,
-        "sum30d": -305.0,
-        "sumYtd": -305.0,
+        "today": -81.0,
+        "sum7d": -237.3,
+        "sum30d": -386.0,
+        "sumYtd": -386.0,
         "history30d": [
-          0.0,
           0.0,
           -60.8,
           0.0,
@@ -228,18 +227,18 @@
           -124.0,
           -16.8,
           -15.5,
-          0.0
+          0.0,
+          -81.0
         ]
       },
       {
         "ticker": "BTC",
         "name": "Grayscale Mini Trust",
-        "today": 0.0,
-        "sum7d": 38.1,
-        "sum30d": 42.5,
-        "sumYtd": 42.5,
+        "today": 48.1,
+        "sum7d": 68.7,
+        "sum30d": 90.6,
+        "sumYtd": 90.6,
         "history30d": [
-          0.0,
           0.0,
           0.0,
           0.0,
@@ -250,34 +249,21 @@
           10.6,
           4.4,
           0.0,
-          0.0
+          0.0,
+          48.1
         ]
       }
     ],
     "signal": {
-      "consecutivePositiveDays": 0,
-      "consecutiveNegativeDays": 2,
-      "interpretation": "MILD_OUTFLOW",
-      "score": -0.1,
-      "todayTotal": -101.1,
-      "weekTotal": -406.0
+      "consecutivePositiveDays": 1,
+      "consecutiveNegativeDays": 0,
+      "interpretation": "CONSOLIDATION",
+      "score": 0.0,
+      "todayTotal": 92.2,
+      "weekTotal": -99.9
     },
-    "lastDate": "2026-06-18",
+    "lastDate": "2026-06-22",
     "history": [
-      {
-        "date": "2026-06-03",
-        "IBIT": -342.3,
-        "FBTC": -54.3,
-        "BITB": 0.0,
-        "ARKB": 0.0,
-        "BTCO": 0.0,
-        "EZBC": 0.0,
-        "BRRR": 0.0,
-        "HODL": 0.0,
-        "BTCW": 0.0,
-        "GBTC": 0.0,
-        "BTC": 0.0
-      },
       {
         "date": "2026-06-04",
         "IBIT": 47.7,
@@ -431,6 +417,20 @@
         "BTCW": 0.0,
         "GBTC": 0.0,
         "BTC": 0.0
+      },
+      {
+        "date": "2026-06-22",
+        "IBIT": 0.0,
+        "FBTC": 57.4,
+        "BITB": 0.0,
+        "ARKB": 64.0,
+        "BTCO": 0.0,
+        "EZBC": 3.7,
+        "BRRR": 0.0,
+        "HODL": 0.0,
+        "BTCW": 0.0,
+        "GBTC": -81.0,
+        "BTC": 48.1
       }
     ]
   }
