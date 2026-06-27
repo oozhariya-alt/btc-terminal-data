@@ -493,13 +493,9 @@
       ]
     },
     "vix": {
-      "value": 18.89,
-      "change_30d_pct": -31.16,
+      "value": 18.41,
+      "change_30d_pct": -32.91,
       "series60d": [
-        {
-          "date": "2026-04-01",
-          "close": 24.54
-        },
         {
           "date": "2026-04-02",
           "close": 23.87
@@ -735,6 +731,10 @@
         {
           "date": "2026-06-25",
           "close": 18.89
+        },
+        {
+          "date": "2026-06-26",
+          "close": 18.41
         }
       ]
     },
@@ -1775,8 +1775,8 @@
       "change_30d_pct": 7.76
     },
     "btc_fut": {
-      "value": 59995.0,
-      "change_30d_pct": -20.95
+      "value": 60420.0,
+      "change_30d_pct": -20.39
     },
     "fed_rate": {
       "value": 3.63,
@@ -1791,50 +1791,50 @@
   },
   "cg": {
     "btc": {
-      "price": 59998.0,
+      "price": 60240.0,
       "ath": 126080.0,
       "ath_date": "2025-10-06T18:57:42.558Z",
-      "ath_change_pct": -52.41232,
+      "ath_change_pct": -52.22041,
       "atl": 67.81,
-      "mcap": 1202931174958.0,
-      "supply": 20048612.0,
-      "total_supply": 20048612.0,
+      "mcap": 1207459311179.0,
+      "supply": 20048678.0,
+      "total_supply": 20048700.0,
       "max_supply": 21000000.0,
-      "fdv": 1202931174958.0,
-      "vol_24h": 39858281355.0,
-      "change_24h_pct": 0.3807,
-      "change_7d_pct": -5.16494,
-      "change_30d_pct": -19.29924,
-      "change_1y_pct": -43.94685
+      "fdv": 1207460636159.0,
+      "vol_24h": 34386089572.0,
+      "change_24h_pct": 1.06837,
+      "change_7d_pct": -4.84076,
+      "change_30d_pct": -18.79353,
+      "change_1y_pct": -43.78013
     },
     "eth": {
-      "price": 1576.52,
+      "price": 1578.85,
       "ath": 4946.05,
       "ath_date": "2025-08-24T19:21:03.333Z",
-      "ath_change_pct": -68.1257,
+      "ath_change_pct": -68.07844,
       "atl": 0.432979,
-      "mcap": 190259796806.0,
-      "supply": 120683589.3012679,
-      "total_supply": 120683589.3012679,
+      "mcap": 190522383450.0,
+      "supply": 120683512.9757978,
+      "total_supply": 120683512.9757978,
       "max_supply": null,
-      "fdv": 190259796806.0,
-      "vol_24h": 14771842134.0,
-      "change_24h_pct": 0.47034,
-      "change_7d_pct": -7.60347,
-      "change_30d_pct": -22.08712,
-      "change_1y_pct": -34.67618
+      "fdv": 190522383450.0,
+      "vol_24h": 12338851714.0,
+      "change_24h_pct": 2.12491,
+      "change_7d_pct": -7.35293,
+      "change_30d_pct": -21.64434,
+      "change_1y_pct": -34.95397
     },
     "global": {
-      "total_mcap": 2161136206714.0793,
-      "total_volume": 95141404635.6879,
-      "btc_dominance": 55.66746324681747,
-      "eth_dominance": 8.814738394398406,
+      "total_mcap": 2166849958886.8967,
+      "total_volume": 87133920935.48155,
+      "btc_dominance": 55.71718128922007,
+      "eth_dominance": 8.807226407761288,
       "active_cryptos": 17449,
-      "mcap_change_24h_pct": 0.717764010493282
+      "mcap_change_24h_pct": 0.9924053583251116
     },
     "treasury": {
       "total_holdings_btc": 1279674.3313804658,
-      "total_value_usd": 76774381449.2485,
+      "total_value_usd": 77069484276.32895,
       "market_cap_dominance": 6.09,
       "companies_count": 175
     },
@@ -1842,224 +1842,224 @@
       {
         "id": "smart-contract-platform",
         "name": "Smart Contract Platform",
-        "mcap": 1712508323027.425,
-        "change_24h_pct": -1.6338711461071052,
-        "volume_24h": 69426610328.20786
+        "mcap": 1718469017001.1282,
+        "change_24h_pct": 0.9506992211301628,
+        "volume_24h": 60693909643.00797
       },
       {
         "id": "layer-1",
         "name": "Layer 1 (L1)",
-        "mcap": 1692908181754.286,
-        "change_24h_pct": -1.5375743381101932,
-        "volume_24h": 66990978853.55204
+        "mcap": 1697824106219.6672,
+        "change_24h_pct": 0.964845378396487,
+        "volume_24h": 59210769489.80011
       },
       {
         "id": "proof-of-work-pow",
         "name": "Proof of Work (PoW)",
-        "mcap": 1239948213639.3381,
-        "change_24h_pct": -1.5215948887335087,
-        "volume_24h": 41115225825.37589
+        "mcap": 1243961544224.6633,
+        "change_24h_pct": 0.8427962988938797,
+        "volume_24h": 36086431568.93886
       },
       {
         "id": "world-liberty-financial-portfolio",
         "name": "World Liberty Financial Portfolio",
-        "mcap": 499325784196.31226,
-        "change_24h_pct": -1.1947150870845853,
-        "volume_24h": 97516731946.70634
+        "mcap": 499695614818.2303,
+        "change_24h_pct": 0.34740161635704225,
+        "volume_24h": 87205827142.42804
       },
       {
         "id": "proof-of-stake-pos",
         "name": "Proof of Stake (PoS)",
-        "mcap": 380301746051.6875,
-        "change_24h_pct": -0.847541579638536,
-        "volume_24h": 23264530359.12026
+        "mcap": 380445384740.50995,
+        "change_24h_pct": 1.3784577311343067,
+        "volume_24h": 20604620243.26444
       },
       {
         "id": "stablecoins",
         "name": "Stablecoins",
-        "mcap": 309752852045.41864,
-        "change_24h_pct": 0.28341277437197404,
-        "volume_24h": 82235435589.13487
+        "mcap": 309683908359.687,
+        "change_24h_pct": 0.3036759557702762,
+        "volume_24h": 74092493866.04858
       },
       {
         "id": "usd-stablecoin",
         "name": "USD Stablecoin",
-        "mcap": 303008929618.16016,
-        "change_24h_pct": 0.33986939322923065,
-        "volume_24h": 82036118562.36014
+        "mcap": 302822958147.0548,
+        "change_24h_pct": 0.32148407056390116,
+        "volume_24h": 73862108436.94559
       },
       {
         "id": "fiat-backed-stablecoin",
         "name": "Fiat-backed Stablecoin",
-        "mcap": 291958590934.14056,
-        "change_24h_pct": 0.04704186002081282,
-        "volume_24h": 80458967132.4961
+        "mcap": 291938279238.9634,
+        "change_24h_pct": 0.050198689523116985,
+        "volume_24h": 72534086118.48654
       },
       {
         "id": "made-in-usa",
         "name": "Made in USA",
-        "mcap": 266974528473.12445,
-        "change_24h_pct": -0.07753972191976495,
-        "volume_24h": 29894225686.70182
+        "mcap": 268496773584.7493,
+        "change_24h_pct": 1.6805750505029065,
+        "volume_24h": 27514747861.20784
       },
       {
         "id": "exchange-based-tokens",
         "name": "Exchange-based Tokens",
-        "mcap": 123754602668.94946,
-        "change_24h_pct": 0.21187097077639458,
-        "volume_24h": 2963735337.1630316
+        "mcap": 123532194368.69876,
+        "change_24h_pct": 0.8149399902478242,
+        "volume_24h": 2684343472.1349235
       },
       {
         "id": "alleged-sec-securities",
         "name": "Alleged SEC Securities",
-        "mcap": 118375183310.847,
-        "change_24h_pct": -0.43151791069107587,
-        "volume_24h": 2234073818.902418
+        "mcap": 118165627963.50226,
+        "change_24h_pct": 0.36849755705321746,
+        "volume_24h": 1999096753.0364938
       },
       {
         "id": "made-in-china",
         "name": "Made in China",
-        "mcap": 117208767219.26318,
-        "change_24h_pct": -0.35095258842123594,
-        "volume_24h": 1845174918.9242463
+        "mcap": 116996398273.40302,
+        "change_24h_pct": 0.4269466863764269,
+        "volume_24h": 1655417373.5732281
       },
       {
         "id": "base-native",
         "name": "Base Native",
-        "mcap": 109332234440.97778,
-        "change_24h_pct": 0.39750587948450483,
-        "volume_24h": 19583936332.91019
+        "mcap": 109421641092.42947,
+        "change_24h_pct": 0.8455880816949569,
+        "volume_24h": 17881936874.732296
       },
       {
         "id": "centralized-exchange-token-cex",
         "name": "Centralized Exchange (CEX) Token",
-        "mcap": 101046316348.04373,
-        "change_24h_pct": 0.08432686240998491,
-        "volume_24h": 1327746753.9174159
+        "mcap": 100863961065.09354,
+        "change_24h_pct": 0.8542373971924122,
+        "volume_24h": 1185947809.7625074
       },
       {
         "id": "genius-act-compliant-stablecoin",
         "name": "GENIUS Act Compliant Stablecoin",
-        "mcap": 76726861472.0251,
-        "change_24h_pct": -0.061138986359842176,
-        "volume_24h": 17495252345.436546
+        "mcap": 76737077080.72522,
+        "change_24h_pct": 0.02418893248800853,
+        "volume_24h": 15833782505.355745
       },
       {
         "id": "mica-compliant-stablecoin",
         "name": "MiCA-Compliant Stablecoin",
-        "mcap": 74511684818.8375,
-        "change_24h_pct": 0.05112188184759593,
-        "volume_24h": 17434277204.81114
+        "mcap": 74456634443.7362,
+        "change_24h_pct": 0.06679078370261934,
+        "volume_24h": 15790868596.632858
       },
       {
         "id": "decentralized-finance-defi",
         "name": "Decentralized Finance (DeFi)",
-        "mcap": 69380338297.58347,
-        "change_24h_pct": 2.9536440416053713,
-        "volume_24h": 4734326907.6991625
+        "mcap": 69550645233.0986,
+        "change_24h_pct": 2.7673655614585124,
+        "volume_24h": 4659353755.2913685
       },
       {
         "id": "real-world-assets-rwa",
         "name": "Real World Assets (RWA)",
-        "mcap": 61139987495.482834,
-        "change_24h_pct": -1.5014899844848293,
-        "volume_24h": 33840867698.46553
+        "mcap": 61503658017.82191,
+        "change_24h_pct": -0.029116175813607682,
+        "volume_24h": 34145162921.52972
       },
       {
         "id": "coinlist-launchpad",
         "name": "CoinList Launchpad",
-        "mcap": 48978798970.90809,
-        "change_24h_pct": 4.364717225547681,
-        "volume_24h": 5546009137.428634
+        "mcap": 49266394835.02905,
+        "change_24h_pct": 5.8831681165637555,
+        "volume_24h": 5184728049.65246
       },
       {
         "id": "governance",
         "name": "Governance",
-        "mcap": 30501245128.964863,
-        "change_24h_pct": -0.2835665379737053,
-        "volume_24h": 3282534988.7612176
+        "mcap": 30515060966.219173,
+        "change_24h_pct": 0.7585366602831662,
+        "volume_24h": 3233362234.5199895
       },
       {
         "id": "privacy",
         "name": "Privacy",
-        "mcap": 27575314327.39484,
-        "change_24h_pct": 0.18181645763263038,
-        "volume_24h": 1793326916.8508039
+        "mcap": 27405139401.773872,
+        "change_24h_pct": 1.1080426177677505,
+        "volume_24h": 1684966740.296554
       },
       {
         "id": "meme-token",
         "name": "Meme",
-        "mcap": 25062736588.820114,
-        "change_24h_pct": -9.314240521765134,
-        "volume_24h": 21223235167.083687
+        "mcap": 25119171537.001118,
+        "change_24h_pct": 0.7367486703990402,
+        "volume_24h": 21158227618.640667
       },
       {
         "id": "decentralized-exchange",
         "name": "Decentralized Exchange (DEX)",
-        "mcap": 23552656260.079403,
-        "change_24h_pct": 0.9218117277271823,
-        "volume_24h": 1713137440.685664
+        "mcap": 23466203667.390865,
+        "change_24h_pct": 0.770317586370717,
+        "volume_24h": 1580708886.2524137
       },
       {
         "id": "binance-alpha-spotlight",
         "name": "Binance Alpha Spotlight",
-        "mcap": 22324583907.38099,
-        "change_24h_pct": -4.914083819767607,
-        "volume_24h": 1947646754.5649624
+        "mcap": 22503096677.694073,
+        "change_24h_pct": 3.1903199862132214,
+        "volume_24h": 2006843885.514938
       },
       {
         "id": "tokenized-products",
         "name": "Tokenized Assets",
-        "mcap": 20599889454.503384,
-        "change_24h_pct": -1.401519529853827,
-        "volume_24h": 32571965742.270412
+        "mcap": 20600522897.104355,
+        "change_24h_pct": -0.4237554784474594,
+        "volume_24h": 32656766004.07604
       },
       {
         "id": "artificial-intelligence",
         "name": "Artificial Intelligence (AI)",
-        "mcap": 20402438141.28975,
-        "change_24h_pct": -1.602747072172436,
-        "volume_24h": 1946741302.5596323
+        "mcap": 20549125885.854134,
+        "change_24h_pct": 1.883725128292691,
+        "volume_24h": 1828939480.7108564
       },
       {
         "id": "tokenized-private-credit",
         "name": "Tokenized Private Credit",
-        "mcap": 19382409236.57283,
-        "change_24h_pct": -1.4956402886762103,
-        "volume_24h": 99048053.0138584
+        "mcap": 19813451427.73816,
+        "change_24h_pct": -0.2396554015722078,
+        "volume_24h": 353382152.65145195
       },
       {
         "id": "infrastructure",
         "name": "Infrastructure",
-        "mcap": 19175507320.886757,
-        "change_24h_pct": 0.9237877649661644,
-        "volume_24h": 1410691352.0260677
+        "mcap": 19158708358.50932,
+        "change_24h_pct": 1.866913216336008,
+        "volume_24h": 1280443330.9514925
       },
       {
         "id": "decentralized-perpetuals",
         "name": "Perpetuals",
-        "mcap": 18747461900.516983,
-        "change_24h_pct": 0.9570215859180435,
-        "volume_24h": 1269310532.3577578
+        "mcap": 18729640134.718826,
+        "change_24h_pct": 0.527414460283468,
+        "volume_24h": 1157645140.7633986
       },
       {
         "id": "decentralized-derivatives",
         "name": "Derivatives",
-        "mcap": 16283018292.967457,
-        "change_24h_pct": 0.7464040457883188,
-        "volume_24h": 1064814210.0767809
+        "mcap": 16233252407.996653,
+        "change_24h_pct": 0.35841377183939765,
+        "volume_24h": 957821476.5646839
       }
     ]
   },
   "onchain": {
-    "mvrv": 1.1318,
-    "date": "2026-06-25",
-    "mvrv_zscore": 0.2678,
-    "nupl": 0.1164,
-    "realized_price": 52863.92,
-    "realized_cap": 1068954364941.63,
-    "puell": 0.7778,
-    "sopr": 0.9792
+    "mvrv": 1.1368,
+    "date": "2026-06-26",
+    "mvrv_zscore": 0.232,
+    "nupl": 0.1203,
+    "realized_price": 52806.09,
+    "realized_cap": 1067559648929.37,
+    "puell": 0.7015,
+    "sopr": 0.9849
   },
-  "updated_at": "2026-06-26T23:10:40.503102+00:00"
+  "updated_at": "2026-06-27T03:50:00.042919+00:00"
 }
