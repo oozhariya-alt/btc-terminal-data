@@ -1,23 +1,23 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-07-03T01:09:24Z",
+  "updatedAt": "2026-07-04T01:07:54Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": 259.5,
-      "sum7d": -2141.6,
-      "sum30d": -2594.0,
-      "sumYtd": -2594.0
+      "today": 223.5,
+      "sum7d": -2177.6,
+      "sum30d": -2630.0,
+      "sumYtd": -2630.0
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
-        "today": 0.0,
-        "sum7d": -1681.7,
-        "sum30d": -2080.4,
-        "sumYtd": -2080.4,
+        "today": -40.4,
+        "sum7d": -1722.1,
+        "sum30d": -2120.8,
+        "sumYtd": -2120.8,
         "history30d": [
           66.4,
           16.4,
@@ -31,7 +31,7 @@
           -300.4,
           -212.4,
           -219.4,
-          0.0
+          -40.4
         ]
       },
       {
@@ -175,10 +175,10 @@
       {
         "ticker": "HODL",
         "name": "VanEck",
-        "today": 0.0,
-        "sum7d": -5.8,
-        "sum30d": -15.1,
-        "sumYtd": -15.1,
+        "today": 4.4,
+        "sum7d": -1.4,
+        "sum30d": -10.7,
+        "sumYtd": -10.7,
         "history30d": [
           -6.1,
           0.0,
@@ -192,7 +192,7 @@
           3.8,
           0.0,
           2.1,
-          0.0
+          4.4
         ]
       },
       {
@@ -270,8 +270,8 @@
       "consecutiveNegativeDays": 0,
       "interpretation": "MILD_OUTFLOW",
       "score": -0.1,
-      "todayTotal": 259.5,
-      "weekTotal": -2141.6
+      "todayTotal": 223.5,
+      "weekTotal": -2177.6
     },
     "lastDate": "2026-07-02",
     "history": [
@@ -445,14 +445,14 @@
       },
       {
         "date": "2026-07-02",
-        "IBIT": 0.0,
+        "IBIT": -40.4,
         "FBTC": 166.0,
         "BITB": 0.0,
         "ARKB": 91.8,
         "BTCO": 0.0,
         "EZBC": 0.0,
         "BRRR": 1.7,
-        "HODL": 0.0,
+        "HODL": 4.4,
         "BTCW": 0.0,
         "GBTC": 0.0,
         "BTC": 0.0
