@@ -1,23 +1,23 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-07-17T00:59:40Z",
+  "updatedAt": "2026-07-18T00:54:12Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": 45.7,
-      "sum7d": -189.6,
-      "sum30d": -476.6,
-      "sumYtd": -476.6
+      "today": -4.2,
+      "sum7d": -75.5,
+      "sum30d": -447.4,
+      "sumYtd": -447.4
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
         "today": 0.0,
-        "sum7d": 61.9,
-        "sum30d": -446.5,
-        "sumYtd": -446.5,
+        "sum7d": 154.4,
+        "sum30d": -413.1,
+        "sumYtd": -413.1,
         "history30d": [
           -300.4,
           -212.4,
@@ -31,16 +31,17 @@
           -185.5,
           138.9,
           80.8,
+          33.4,
           0.0
         ]
       },
       {
         "ticker": "FBTC",
         "name": "Fidelity Wise Origin",
-        "today": 30.7,
-        "sum7d": -255.1,
-        "sum30d": -169.4,
-        "sumYtd": -169.4,
+        "today": -4.2,
+        "sum7d": -244.4,
+        "sum30d": -173.6,
+        "sumYtd": -173.6,
         "history30d": [
           -3.9,
           -10.2,
@@ -54,13 +55,14 @@
           -245.6,
           21.1,
           16.9,
-          30.7
+          30.7,
+          -4.2
         ]
       },
       {
         "ticker": "BITB",
         "name": "Bitwise Bitcoin",
-        "today": 15.0,
+        "today": 0.0,
         "sum7d": 18.8,
         "sum30d": 23.6,
         "sumYtd": 23.6,
@@ -77,7 +79,8 @@
           0.0,
           3.5,
           0.0,
-          15.0
+          15.0,
+          0.0
         ]
       },
       {
@@ -100,6 +103,7 @@
           0.0,
           3.6,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -114,6 +118,7 @@
           0.0,
           0.0,
           5.4,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -146,6 +151,7 @@
           0.0,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -161,6 +167,7 @@
           0.0,
           0.0,
           1.7,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -192,6 +199,7 @@
           6.1,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -215,6 +223,7 @@
           0.0,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -222,7 +231,7 @@
         "ticker": "GBTC",
         "name": "Grayscale Trust",
         "today": 0.0,
-        "sum7d": -116.8,
+        "sum7d": -53.1,
         "sum30d": -189.0,
         "sumYtd": -189.0,
         "history30d": [
@@ -238,6 +247,7 @@
           -53.1,
           0.0,
           0.0,
+          0.0,
           0.0
         ]
       },
@@ -245,7 +255,7 @@
         "ticker": "BTC",
         "name": "Grayscale Mini Trust",
         "today": 0.0,
-        "sum7d": 122.8,
+        "sum7d": 70.0,
         "sum30d": 178.5,
         "sumYtd": 178.5,
         "history30d": [
@@ -261,19 +271,20 @@
           53.4,
           6.6,
           10.0,
+          0.0,
           0.0
         ]
       }
     ],
     "signal": {
-      "consecutivePositiveDays": 3,
-      "consecutiveNegativeDays": 0,
+      "consecutivePositiveDays": 0,
+      "consecutiveNegativeDays": 1,
       "interpretation": "CONSOLIDATION",
       "score": 0.0,
-      "todayTotal": 45.7,
-      "weekTotal": -189.6
+      "todayTotal": -4.2,
+      "weekTotal": -75.5
     },
-    "lastDate": "2026-07-16",
+    "lastDate": "2026-07-17",
     "history": [
       {
         "date": "2026-06-29",
@@ -445,9 +456,23 @@
       },
       {
         "date": "2026-07-16",
-        "IBIT": 0.0,
+        "IBIT": 33.4,
         "FBTC": 30.7,
         "BITB": 15.0,
+        "ARKB": 0.0,
+        "BTCO": 0.0,
+        "EZBC": 0.0,
+        "BRRR": 0.0,
+        "HODL": 0.0,
+        "BTCW": 0.0,
+        "GBTC": 0.0,
+        "BTC": 0.0
+      },
+      {
+        "date": "2026-07-17",
+        "IBIT": 0.0,
+        "FBTC": -4.2,
+        "BITB": 0.0,
         "ARKB": 0.0,
         "BTCO": 0.0,
         "EZBC": 0.0,
