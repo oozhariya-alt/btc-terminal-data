@@ -1,23 +1,23 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-08-07T23:58:03Z",
+  "updatedAt": "2026-08-08T23:54:33Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": -15.4,
-      "sum7d": 687.1,
-      "sum30d": 676.1,
-      "sumYtd": 676.1
+      "today": 101.7,
+      "sum7d": 804.2,
+      "sum30d": 793.2,
+      "sumYtd": 793.2
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
-        "today": 0.0,
-        "sum7d": 667.5,
-        "sum30d": 598.2,
-        "sumYtd": 598.2,
+        "today": 86.7,
+        "sum7d": 754.2,
+        "sum30d": 684.9,
+        "sumYtd": 684.9,
         "history30d": [
           116.5,
           163.9,
@@ -33,16 +33,16 @@
           170.3,
           196.8,
           128.3,
-          0.0
+          86.7
         ]
       },
       {
         "ticker": "FBTC",
         "name": "Fidelity Wise Origin",
-        "today": 0.0,
-        "sum7d": 36.2,
-        "sum30d": 25.5,
-        "sumYtd": 25.5,
+        "today": 41.0,
+        "sum7d": 77.2,
+        "sum30d": 66.5,
+        "sumYtd": 66.5,
         "history30d": [
           24.1,
           23.1,
@@ -58,7 +58,7 @@
           19.6,
           11.3,
           11.2,
-          0.0
+          41.0
         ]
       },
       {
@@ -189,10 +189,10 @@
       {
         "ticker": "HODL",
         "name": "VanEck",
-        "today": 0.0,
-        "sum7d": -40.7,
-        "sum30d": -38.9,
-        "sumYtd": -38.9,
+        "today": -10.6,
+        "sum7d": -51.3,
+        "sum30d": -49.5,
+        "sumYtd": -49.5,
         "history30d": [
           1.8,
           0.0,
@@ -208,7 +208,7 @@
           0.0,
           -14.7,
           -32.8,
-          0.0
+          -10.6
         ]
       },
       {
@@ -288,12 +288,12 @@
       }
     ],
     "signal": {
-      "consecutivePositiveDays": 0,
-      "consecutiveNegativeDays": 1,
-      "interpretation": "MILD_INFLOW",
-      "score": 0.1,
-      "todayTotal": -15.4,
-      "weekTotal": 687.1
+      "consecutivePositiveDays": 5,
+      "consecutiveNegativeDays": 0,
+      "interpretation": "STRONG_INFLOW",
+      "score": 0.3,
+      "todayTotal": 101.7,
+      "weekTotal": 804.2
     },
     "lastDate": "2026-08-07",
     "history": [
@@ -495,14 +495,14 @@
       },
       {
         "date": "2026-08-07",
-        "IBIT": 0.0,
-        "FBTC": 0.0,
+        "IBIT": 86.7,
+        "FBTC": 41.0,
         "BITB": 2.1,
         "ARKB": 1.9,
         "BTCO": -19.4,
         "EZBC": 0.0,
         "BRRR": 0.0,
-        "HODL": 0.0,
+        "HODL": -10.6,
         "BTCW": 0.0,
         "GBTC": 0.0,
         "BTC": 0.0
