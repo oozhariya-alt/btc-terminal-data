@@ -1,23 +1,23 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-08-14T23:47:15Z",
+  "updatedAt": "2026-08-15T23:43:55Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": 6.1,
-      "sum7d": -105.6,
-      "sum30d": 445.0,
-      "sumYtd": 445.0
+      "today": -56.2,
+      "sum7d": -167.9,
+      "sum30d": 382.7,
+      "sumYtd": 382.7
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
-        "today": 0.0,
-        "sum7d": 191.6,
-        "sum30d": 757.0,
-        "sumYtd": 757.0,
+        "today": -55.5,
+        "sum7d": 136.1,
+        "sum30d": 701.5,
+        "sumYtd": 701.5,
         "history30d": [
           -8.8,
           -54.8,
@@ -33,16 +33,16 @@
           50.2,
           -14.3,
           -5.7,
-          0.0
+          -55.5
         ]
       },
       {
         "ticker": "FBTC",
         "name": "Fidelity Wise Origin",
-        "today": 0.0,
-        "sum7d": -94.1,
-        "sum30d": -115.0,
-        "sumYtd": -115.0,
+        "today": -6.8,
+        "sum7d": -100.9,
+        "sum30d": -121.8,
+        "sumYtd": -121.8,
         "history30d": [
           -2.8,
           0.0,
@@ -58,7 +58,7 @@
           -4.1,
           -46.8,
           -55.1,
-          0.0
+          -6.8
         ]
       },
       {
@@ -288,12 +288,12 @@
       }
     ],
     "signal": {
-      "consecutivePositiveDays": 1,
-      "consecutiveNegativeDays": 0,
+      "consecutivePositiveDays": 0,
+      "consecutiveNegativeDays": 3,
       "interpretation": "CONSOLIDATION",
       "score": 0.0,
-      "todayTotal": 6.1,
-      "weekTotal": -105.6
+      "todayTotal": -56.2,
+      "weekTotal": -167.9
     },
     "lastDate": "2026-08-14",
     "history": [
@@ -495,8 +495,8 @@
       },
       {
         "date": "2026-08-14",
-        "IBIT": 0.0,
-        "FBTC": 0.0,
+        "IBIT": -55.5,
+        "FBTC": -6.8,
         "BITB": 6.1,
         "ARKB": 0.0,
         "BTCO": 0.0,
