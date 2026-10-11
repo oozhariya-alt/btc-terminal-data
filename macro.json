@@ -1,25 +1,24 @@
 {
   "schema": "btc_terminal_macro",
   "version": 1,
-  "updatedAt": "2026-10-10T02:34:40Z",
+  "updatedAt": "2026-10-11T02:02:57Z",
   "source": "farside.co.uk/btc",
   "etfFlows": {
     "totals": {
-      "today": -1.3,
-      "sum7d": -425.9,
-      "sum30d": 1705.1,
-      "sumYtd": 1705.1
+      "today": 21.1,
+      "sum7d": -403.5,
+      "sum30d": 790.2,
+      "sumYtd": 790.2
     },
     "byEtf": [
       {
         "ticker": "IBIT",
         "name": "BlackRock iShares",
-        "today": 0.0,
-        "sum7d": 332.5,
-        "sum30d": 1586.5,
-        "sumYtd": 1586.5,
+        "today": 22.4,
+        "sum7d": 354.9,
+        "sum30d": 1227.5,
+        "sumYtd": 1227.5,
         "history30d": [
-          381.4,
           350.3,
           166.3,
           162.6,
@@ -33,7 +32,7 @@
           122.0,
           -207.7,
           -5.5,
-          0.0
+          22.4
         ]
       },
       {
@@ -41,10 +40,9 @@
         "name": "Fidelity Wise Origin",
         "today": -3.6,
         "sum7d": -411.7,
-        "sum30d": 153.4,
-        "sumYtd": 153.4,
+        "sum30d": -85.4,
+        "sumYtd": -85.4,
         "history30d": [
-          238.8,
           257.4,
           143.2,
           12.9,
@@ -66,10 +64,9 @@
         "name": "Bitwise Bitcoin",
         "today": 0.0,
         "sum7d": -52.2,
-        "sum30d": -70.0,
-        "sumYtd": -70.0,
+        "sum30d": -91.6,
+        "sumYtd": -91.6,
         "history30d": [
-          21.6,
           0.0,
           0.0,
           4.1,
@@ -91,10 +88,9 @@
         "name": "ARK 21Shares",
         "today": 0.0,
         "sum7d": -214.9,
-        "sum30d": 113.0,
-        "sumYtd": 113.0,
+        "sum30d": -176.1,
+        "sumYtd": -176.1,
         "history30d": [
-          289.1,
           0.6,
           5.0,
           0.0,
@@ -126,7 +122,6 @@
           0.0,
           0.0,
           0.0,
-          0.0,
           -4.2,
           0.0,
           0.0,
@@ -144,7 +139,6 @@
         "sum30d": 9.6,
         "sumYtd": 9.6,
         "history30d": [
-          0.0,
           0.0,
           0.0,
           4.9,
@@ -182,7 +176,6 @@
           0.0,
           0.0,
           0.0,
-          0.0,
           0.0
         ]
       },
@@ -194,7 +187,6 @@
         "sum30d": -2.4,
         "sumYtd": -2.4,
         "history30d": [
-          0.0,
           2.4,
           0.0,
           0.0,
@@ -221,7 +213,6 @@
         "history30d": [
           0.0,
           0.0,
-          0.0,
           -4.0,
           0.0,
           0.0,
@@ -241,10 +232,9 @@
         "name": "Grayscale Trust",
         "today": 0.0,
         "sum7d": -78.9,
-        "sum30d": -98.8,
-        "sumYtd": -98.8,
+        "sum30d": -102.1,
+        "sumYtd": -102.1,
         "history30d": [
-          3.3,
           0.0,
           0.0,
           0.0,
@@ -266,10 +256,9 @@
         "name": "Grayscale Mini Trust",
         "today": 0.0,
         "sum7d": 3.6,
-        "sum30d": 22.0,
-        "sumYtd": 22.0,
+        "sum30d": 18.9,
+        "sumYtd": 18.9,
         "history30d": [
-          3.1,
           5.0,
           0.0,
           0.0,
@@ -288,29 +277,15 @@
       }
     ],
     "signal": {
-      "consecutivePositiveDays": 0,
-      "consecutiveNegativeDays": 3,
+      "consecutivePositiveDays": 1,
+      "consecutiveNegativeDays": 0,
       "interpretation": "MILD_OUTFLOW",
       "score": -0.1,
-      "todayTotal": -1.3,
-      "weekTotal": -425.9
+      "todayTotal": 21.1,
+      "weekTotal": -403.5
     },
     "lastDate": "2026-10-09",
     "history": [
-      {
-        "date": "2026-09-21",
-        "IBIT": 381.4,
-        "FBTC": 238.8,
-        "BITB": 21.6,
-        "ARKB": 289.1,
-        "BTCO": 0.0,
-        "EZBC": 0.0,
-        "BRRR": 0.0,
-        "HODL": 0.0,
-        "BTCW": 0.0,
-        "GBTC": 3.3,
-        "BTC": 3.1
-      },
       {
         "date": "2026-09-22",
         "IBIT": 350.3,
@@ -495,7 +470,7 @@
       },
       {
         "date": "2026-10-09",
-        "IBIT": 0.0,
+        "IBIT": 22.4,
         "FBTC": -3.6,
         "BITB": 0.0,
         "ARKB": 0.0,
